@@ -1,0 +1,5 @@
+apiVersion: v2
+name: cloudapp-demo-hello-world
+description: 云应用示例 - Hello World
+type: application
+version: 1.0.0

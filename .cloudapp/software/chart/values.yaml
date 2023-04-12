@@ -1,0 +1,17 @@
+# 子网 ID，用于生成内网服务，从 tf 声明中注入
+SUBNET_ID: ""
+
+# 拉取镜像所需凭据，从 tf 注入
+IMAGE_CREDENTIALS:
+  REGISTRY: ""
+  USERNAME: ""
+  PASSWORD: ""
+
+# API 服务名
+SERVER_NAME: hello
+
+# API 服务镜像，注意命名空间在开发者中心分配 
+SERVER_IMAGE: ns-n3oq8cc1/cloudapp-demo-hello-world:latest
+
+# API 服务端口
+SERVER_PORT: 80

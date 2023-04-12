@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    k8s-app: {{.Values.SERVER_NAME}}
+    qcloud-app: {{.Values.SERVER_NAME}}
+  name: "{{.Values.SERVER_NAME}}-statefulset"
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      k8s-app: {{.Values.SERVER_NAME}}
+      qcloud-app: {{.Values.SERVER_NAME}}
+  serviceName: {{.Values.SERVER_NAME}}
+  template:
+    metadata:
+      labels:
+        k8s-app: {{.Values.SERVER_NAME}}
+        qcloud-app: {{.Values.SERVER_NAME}}
+    spec:
+      containers:
+        - name: "{{.Values.SERVER_NAME}}-container"
+          image: {{.Values.IMAGE_CREDENTIALS.REGISTRY}}/{{.Values.SERVER_IMAGE}}
+          resources:
+            limits:
+              cpu: 500m
+              memory: 1Gi
+            requests:
+              cpu: 250m
+              memory: 256Mi
+      imagePullSecrets:
+        - name: cloudapp-registry-key
