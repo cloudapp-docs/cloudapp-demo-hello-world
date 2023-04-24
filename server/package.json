@@ -4,8 +4,8 @@
   "description": "Hello World 云应用，服务源码",
   "main": "server.js",
   "scripts": {
-    "build": "docker build -t \"$(cloudapp docker --url | awk -F'[' '{print $1}')cloudapp-demo-hello-world:latest\" .",
-    "push": "docker push \"$(cloudapp docker --url | awk -F'[' '{print $1}')cloudapp-demo-hello-world:latest\"",
+    "build": "docker build -t \"$(cloudapp docker ../.cloudapp --url | awk -F'[' '{print $1}')cloudapp-demo-hello-world:latest\" .",
+    "push": "docker push \"$(cloudapp docker ../.cloudapp --url | awk -F'[' '{print $1}')cloudapp-demo-hello-world:latest\"",
     "release": "npm run build && npm run push"
   },
   "author": "",
