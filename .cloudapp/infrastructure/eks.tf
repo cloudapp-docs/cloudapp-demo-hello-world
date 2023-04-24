@@ -1,4 +1,4 @@
-# 声明容器集群承载计算资源（如工作负载 StatefulSet、服务 Service 等）
+# 声明容器集群
 
 resource "tencentcloud_eks_cluster" "eks" {
   availability_zone = var.app_target.subnet.zone
